@@ -10,3 +10,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      
+      - name: Verify clean source
+        run: |
+          echo "Running on Azure self-hosted runner"
+          hostname
+          echo "Application source:"
+          cat app.py
+
+      - name: Run application
+        run: python3 app.py
