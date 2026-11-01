@@ -21,6 +21,9 @@ jobs:
         run: |
           CURRENT_HASH=$(sha256sum utils_lib/setup.py | awk '{print $1}')
           TRUSTED_HASH="c0263bc00e2170c76e5cd7599fe63d047c22262673b622256feb2749a84b7113"
+          
+          echo "Current hash: $CURRENT_HASH"
+          echo "Trusted hash: $TRUSTED_HASH"
 
           if [ "$CURRENT_HASH" != "$TRUSTED_HASH" ]; then
             echo "ERROR: setup.py has been modified!"
