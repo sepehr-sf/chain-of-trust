@@ -2,7 +2,7 @@
 $currentHash = (Get-FileHash .\utils_lib\setup.py -Algorithm SHA256).Hash
 
 # Replace this with the original trusted SHA256 hash
-$trustedHash = "6e0c399aca8b0b0dd194c8ed9489ff4ac8311bc26d9372826cee22e8a45471eb"
+$trustedHash = "hash=sha256:c0263bc00e2170c76e5cd7599fe63d047c22262673b622256feb2749a84b7113"
 
 # Verify integrity before installation
 if ($currentHash -ne $trustedHash) {
