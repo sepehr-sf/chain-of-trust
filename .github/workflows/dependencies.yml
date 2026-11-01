@@ -36,10 +36,10 @@ jobs:
           echo "Hash verified successfully."
 
       - name: Install pip-check-safety
-          run: python -m pip install pip-check-safety
+        run: python -m pip install pip-check-safety
 
       - name: Scan dependencies for typosquatting
-          run: pip-check -r requirements.txt
+        run: pip-check -r requirements.txt
 
       - name: Install dependencies
         run: pip install -r requirements.txt
