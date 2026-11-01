@@ -10,6 +10,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Simulate unauthorized build modification
+        run: |
+          echo 'print("INJECTED: Unauthorized build modification detected")' >> app.py
+          echo "Application source after modification:"
+          cat app.py
       
       - name: Verify clean source
         run: |
