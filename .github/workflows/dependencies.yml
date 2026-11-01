@@ -20,7 +20,7 @@ jobs:
       - name: Verify setup.py integrity
         run: |
           CURRENT_HASH=$(sha256sum utils_lib/setup.py | awk '{print $1}')
-          TRUSTED_HASH="#utils-lib==0.1.0 --hash=sha256:hash=sha256:c0263bc00e2170c76e5cd7599fe63d047c22262673b622256feb2749a84b7113"
+          TRUSTED_HASH="c0263bc00e2170c76e5cd7599fe63d047c22262673b622256feb2749a84b7113"
 
           if [ "$CURRENT_HASH" != "$TRUSTED_HASH" ]; then
             echo "ERROR: setup.py has been modified!"
