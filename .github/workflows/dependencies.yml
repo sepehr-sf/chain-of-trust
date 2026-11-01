@@ -34,3 +34,15 @@ jobs:
 
       - name: Install dependencies
         run: pip install -r requirements.txt
+
+      - name: Check for pwned.txt
+        run: |
+          echo "Searching for pwned.txt..."
+          find . -name "pwned.txt" -type f -print
+
+          if find . -name "pwned.txt" -type f | grep -q .; then
+            echo "pwned.txt was created!"
+            find . -name "pwned.txt" -type f -exec cat {} \;
+          else
+            echo "pwned.txt was not found."
+          fi
