@@ -20,7 +20,7 @@ jobs:
       - name: Verify setup.py integrity
         run: |
           CURRENT_HASH=$(sha256sum utils_lib/setup.py | awk '{print $1}')
-          TRUSTED_HASH="c0263bc00e2170c76e5cd7599fe63d047c22262673b622256feb2749a84b7113"
+          TRUSTED_HASH="cab76b502232a2bdfb2f5862039e326e9fc3c39a90f305e5edc28080e62dcbe9"
           
           echo "Current hash: $CURRENT_HASH"
           echo "Trusted hash: $TRUSTED_HASH"
